@@ -8,19 +8,19 @@ const ProductCard = ({ value }) => {
 
   useEffect(() => {
     if (selector === 1) {
-      axios.get('http://localhost:5000/beans')
+      axios.get('/api/beans')
         .then(response => setProducts(response.data))
         .catch(error => console.error('Error fetching products:', error));
     } else if (selector === 2) {
-      axios.get('http://localhost:5000/coldbrew')
+      axios.get('/api/coldbrew')
         .then(response => setProducts(response.data))
         .catch(error => console.error('Error fetching products:', error));
     } else if (selector === 3) {
-      axios.get('http://localhost:5000/dripbag')
+      axios.get('/api/dripbag')
         .then(response => setProducts(response.data))
         .catch(error => console.error('Error fetching products:', error));
     } else if (selector === 4) {
-      axios.get('http://localhost:5000/goods')
+      axios.get('/api/goods')
         .then(response => setProducts(response.data))
         .catch(error => console.error('Error fetching products:', error));
     }
