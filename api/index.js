@@ -36,11 +36,13 @@ const coldbrewRoutes = require('./routes/coldbrew');
 const dripbagRoutes = require('./routes/dripbag'); 
 const goodsRoutes = require('./routes/goods'); 
 
-app.use('/beans', beansRoutes);
-app.use('/coldbrew', coldbrewRoutes);
-app.use('/dripbag', dripbagRoutes);
-app.use('/goods', goodsRoutes);
+app.use('/api/beans', beansRoutes);
+app.use('/api/coldbrew', coldbrewRoutes);
+app.use('/api/dripbag', dripbagRoutes);
+app.use('/api/goods', goodsRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
