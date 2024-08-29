@@ -45,8 +45,8 @@ app.use('/api/dripbag', dripbagRoutes);
 app.use('/api/goods', goodsRoutes);
 
 // 포트 설정 (Vercel에서는 자동으로 설정됨)
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+// const PORT = process.env.PORT || 5000;
+app.listen(5000, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
