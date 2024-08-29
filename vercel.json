@@ -7,6 +7,9 @@
     "routes": [
       { "src": "/api/(.*)", "dest": "api/index.js" },
       { "src": "/(.*)", "dest": "client/dist/$1" }
-    ]
+    ],
+    "static-build": {
+    "distDir": "client/dist"
+  }
   }
   
