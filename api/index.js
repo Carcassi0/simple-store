@@ -16,10 +16,9 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB 연결
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => console.log("데이터베이스 연결 성공 !!"))
+.catch(e => console.log(`데이터베이스 연결 실패 ${e}`))
 
 // MongoDB 연결 성공 및 실패 핸들링
 const db = mongoose.connection;
