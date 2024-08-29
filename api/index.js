@@ -32,6 +32,11 @@ app.get('/', (req, res) => {
   res.send('API is working');
 });
 
+app.use(express.static(path.join(__dirname, '../client/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
+
 // 라우터 파일 로드 및 사용
 const beansRoutes = require('./routes/beans'); 
 const coldbrewRoutes = require('./routes/coldbrew'); 
